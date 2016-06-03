@@ -1,6 +1,6 @@
 {
   "name": "nodeify-ts",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Create functions that accept both node-style callbacks and return promises",
   "main": "dist/index.js",
   "typings": "dist/index",

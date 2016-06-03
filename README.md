@@ -61,6 +61,5 @@ MIT
 [downloads-url]: https://npmjs.org/package/nodeify-ts
 [travis-image]: https://api.travis-ci.org/Quobject/nodeify-ts.svg
 [travis-url]: https://travis-ci.org/Quobject/nodeify-ts/
-[gitter-image]: 
-[![Gitter](https://badges.gitter.im/Quobject/nodeify-ts.svg
+[gitter-image]: https://badges.gitter.im/Quobject/nodeify-ts.svg
 [gitter-url]: https://gitter.im/Quobject/nodeify-ts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
