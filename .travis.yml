@@ -10,3 +10,9 @@ node_js:
   - "0.11"
   - "0.10" 
   - "iojs"
+
+install:
+  - npm install typings -g
+  - typings install
+  - npm install   
+    
