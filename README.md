@@ -1,5 +1,7 @@
 # nodeify-ts
 
+[![Join the chat at https://gitter.im/Quobject/nodeify-ts](https://badges.gitter.im/Quobject/nodeify-ts.svg)](https://gitter.im/Quobject/nodeify-ts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 [![NPM](https://nodei.co/npm/nodeify-ts.png?downloads=true&downloadRank=true)](https://nodei.co/npm/nodeify-ts/)
 [![NPM](https://nodei.co/npm-dl/nodeify-ts.png?months=6&height=3)](https://nodei.co/npm/nodeify-ts/)
