@@ -1,26 +1,61 @@
 /* tslint:disable:no-shadowed-variable */
-/* tslint:disable:no-unused-variable */
 import test = require('blue-tape');
-import * as path from 'path';
-import * as util from 'util';
 import nodeify from './index';
+
+const command = function (command: string, callback?: (err, data) => void): Promise<any> {
+
+  const promise = Promise.resolve().then(function () {
+    return Promise.resolve('do some work and return result ' + command);
+  }).then(function (data) {
+    //console.log(data);
+    return data;
+  });
+
+  return nodeify(promise, callback);
+};
+
+const commandWillFail = function (command: string, callback?: (err, data) => void): Promise<any> {
+
+  const promise = Promise.resolve().then(function () {
+    return Promise.reject('do some work and reject ' + command);
+  }).then(function (data) {
+    //console.log(data);
+    return data;
+  });
+
+  return nodeify(promise, callback);
+};
 
 test('nodeify', t => {
 
-  t.test('playbook.yml -i hosts', t => {
-    //const options = new Options(
-    //  /* currentWorkingDirectory */ path.join(__dirname, '..', 'test', 'test1')
-    //);
-
-    //const ansiblePlaybook = new AnsiblePlaybook(options);
-
-    //return ansiblePlaybook.command('playbook.yml -i hosts').then(function (data) {
-    //  console.log('data = ', util.inspect(data, { depth: 10 }));
-    //  t.ok(data);
-    //  t.ok(data.object.ok);
-    //});
-
+  t.test('promise', t => {
+    return command('with promise').then(function (data) {
+      t.equal(data, 'do some work and return result with promise');
+    });
   });
 
-
+  t.test('callback', t => {
+    command('with callback', function (err, data) {
+      t.equal(data, 'do some work and return result with callback');
+      t.end();
+    });
+  });
 });
+
+test('nodeify should fail', t => {
+
+  t.test('promise', t => {
+    return t.shouldFail( commandWillFail('with promise').then(function (data) {
+      t.equal(data, 'do some work and return result with promise');
+    }) );
+  });
+
+  t.test('callback', t => {
+    commandWillFail('with callback', function (err, data) {
+      t.equal(err, 'do some work and reject with callback');
+      t.equal(null, data);
+      t.end();
+    });
+  });
+});
+
