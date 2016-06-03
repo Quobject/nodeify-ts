@@ -1,6 +1,6 @@
 {
   "name": "nodeify-ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create functions that accept both node-style callbacks and return promises",
   "main": "dist/index.js",
   "typings": "dist/index",
@@ -19,8 +19,9 @@
     "url": "git+https://github.com/Quobject/nodeify-ts.git"
   },
   "keywords": [
-    "ansible",
-    "ansible-playbook"
+    "nodeify",
+    "ascallback",
+    "Promise"
   ],
   "author": "Matthias Ludwig <mludwig@quobject.io>",
   "license": "MIT",

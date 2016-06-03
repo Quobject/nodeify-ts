@@ -10,7 +10,7 @@ Create functions that accept both node-style callbacks and return promises
     
 ## Usage
 
-*Javascript
+* Javascript
 
 ```js
 var nodeify = require('nodeify-ts');
@@ -25,7 +25,7 @@ var command = function (command, callback) {
 };
 ```
 
-*Typescript
+* Typescript
 
 ```js
 import nodeify from 'nodeify-ts';
@@ -35,7 +35,6 @@ const command = function (command: string, callback?: (err, data) => void): Prom
   const promise = Promise.resolve().then(function () {
     return Promise.resolve('do some work and return result ' + command);
   }).then(function (data) {
-    //console.log(data);
     return data;
   });
 
