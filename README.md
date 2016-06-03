@@ -1,5 +1,5 @@
 # nodeify-ts
-
+Create functions that both return promises and accept node-style callbacks
 
 [![NPM](https://nodei.co/npm/nodeify-ts.png?downloads=true&downloadRank=true)](https://nodei.co/npm/nodeify-ts/)
 [![NPM](https://nodei.co/npm-dl/nodeify-ts.png?months=6&height=3)](https://nodei.co/npm/nodeify-ts/)
@@ -8,9 +8,6 @@
 [![NPM downloads][downloads-image]][downloads-url]
 [![Build status][travis-image]][travis-url]
 [![Gitter][gitter-image]][gitter-url]
-
-Create functions that accept both node-style callbacks and return promises
-
 
 ## Installation
 
