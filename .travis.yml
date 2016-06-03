@@ -13,6 +13,6 @@ node_js:
 
 install:
   - npm install typings -g
-  - typings install
   - npm install   
+  - typings install
     
