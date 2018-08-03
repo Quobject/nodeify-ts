@@ -1,18 +1,17 @@
 {
   "name": "nodeify-ts",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Create functions that both return promises and accept node-style callbacks",
-  "main": "dist/index.js",
-  "typings": "dist/index",
+  "main": "lib/index.js",
   "files": [
     "lib/"
   ],
   "scripts": {
     "lint": "tslint src/**/*.ts",
-    "build": "rimraf dist/ && tsc",
+    "build": "rimraf lib/ && tsc",
     "test-spec": "ts-node node_modules/blue-tape/bin/blue-tape.js \"src/**/*.spec.ts\" | tap-diff",
     "test": "npm run lint && npm run build && npm run test-spec",
-    "prepare": "npm run lint && npm run build && rimraf dist/**/*.spec.* "
+    "prepare": "npm run lint && npm run build && rimraf lib/**/*.spec.* "
   },
   "repository": {
     "type": "git",
