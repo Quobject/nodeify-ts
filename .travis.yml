@@ -11,12 +11,10 @@ node_js:
   - "iojs"
 
 install:
-  - npm install typings -g
   - npm install blue-tape
   - npm install rimraf
   - npm install tap-diff
   - npm install ts-node
   - npm install tslint
-  - npm install typescript  
-  - typings install
+  - npm install typescript 
     

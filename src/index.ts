@@ -1,12 +1,12 @@
-﻿export default function (promise: Promise<any>, callback?: (err, data) => void): Promise<any> {
+﻿export default function (promise: Promise<any>, callback?: (err: any, data: any) => void): Promise<any> {
   if (typeof callback !== 'function') {
     return promise;
   }
-  promise.then(
-    function (result) {
+  return promise.then(
+    (result) => {
       callback(null, result);
-    }, function (error) {
+    }, (error) => {
       callback(error || new Error, null);
-    }
+    },
   );
 }
