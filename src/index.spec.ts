@@ -1,5 +1,5 @@
 /* tslint:disable:no-shadowed-variable */
-import * as test from 'blue-tape';
+const test = require('blue-tape');
 import nodeify from './index';
 
 const command = function (command: string, callback?: (err: any, data: any) => void): Promise<any> {
@@ -26,15 +26,15 @@ const commandWillFail = function (command: string, callback?: (err: any, data: a
   return nodeify(promise, callback);
 };
 
-test('nodeify', t => {
+test('nodeify', (t: any) => {
 
-  t.test('promise', t => {
+  t.test('promise', (t: any) => {
     return command('with promise').then(function (data) {
       t.equal(data, 'do some work and return result with promise');
     });
   });
 
-  t.test('callback', t => {
+  t.test('callback', (t: any) => {
     command('with callback', function (err: any, data: any) {
       t.equal(data, 'do some work and return result with callback');
       t.end();
@@ -42,9 +42,9 @@ test('nodeify', t => {
   });
 });
 
-test('nodeify should fail', t => {
+test('nodeify should fail', (t: any) => {
 
-  t.test('promise', t => {
+  t.test('promise', (t: any) => {
     return commandWillFail('with promise').then(function (data) {
       console.log('data', data);
     }).catch((e) => {
@@ -52,7 +52,7 @@ test('nodeify should fail', t => {
     });
   });
 
-  t.test('callback', t => {
+  t.test('callback', (t: any) => {
     commandWillFail('with callback', function (err: any, data: any) {
       t.equal(err, 'do some work and reject with callback');
       t.equal(null, data);
